@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Seu Closet - Monte seu Look</title>
+
+    <!-- CSS correto do Flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h2>💗 Seu Closet</h2>
+            <span>Monte seu look aqui!</span>
+        </div>
+
+        <nav>
+            <a href="#">Sobre nós</a>
+            <a href="{{ url_for('home') }}">Página Inicial</a>
+            <a href="#">Contato</a>
+        </nav>
+
+        <!-- Botão login conectado à rota Flask -->
+        <a href="{{ url_for('login') }}">
+            <button class="login-btn">Login</button>
+        </a>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>SEU CLOSET</h1>
+            <p>Crie combinações incríveis e descubra seu estilo ideal.</p>
+            <button onclick="scrollToCloset()">Montar Look</button>
+        </div>
+    </section>
+
+    <!-- CATEGORIAS -->
+    <section class="categorias">
+        <h2>Categorias</h2>
+        <div class="cards">
+            <div class="card">👗 Casual</div>
+            <div class="card">👠 Formal</div>
+            <div class="card">👜 Acessórios</div>
+        </div>
+    </section>
+
+    <!-- MONTAR LOOK -->
+    <section class="closet" id="closet">
+        <h2>Monte seu Look</h2>
+
+        <div class="roupas">
+            <button onclick="addItem('Blusa Branca')">Blusa Branca</button>
+            <button onclick="addItem('Calça Jeans')">Calça Jeans</button>
+            <button onclick="addItem('Vestido Preto')">Vestido Preto</button>
+            <button onclick="addItem('Salto Alto')">Salto Alto</button>
+            <button onclick="addItem('Bolsa Rosa')">Bolsa Rosa</button>
+        </div>
+
+        <div class="resultado">
+            <h3>Seu Look:</h3>
+            <ul id="lista-look"></ul>
+            <button class="limpar" onclick="limparLook()">Limpar Look</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Seu Closet - Todos os direitos reservados</p>
+    </footer>
+
+    <!-- JS correto do Flask -->
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+
+</body>
+</html>
